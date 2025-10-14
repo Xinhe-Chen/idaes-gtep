@@ -8,7 +8,7 @@ prescient_options = {
     "run_sced_with_persistent_forecast_errors": False,
     "output_directory": "data/123_Bus_Coal/Prescient_1/results",
     "start_date": "01-01-2035",
-    "num_days": 3,
+    "num_days": 365,
     "sced_horizon": 24,
     "ruc_mipgap": 0.01,
     "reserve_factor": 0,
