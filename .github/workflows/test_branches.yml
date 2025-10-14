@@ -2,13 +2,13 @@ name: GitHub Branch CI
 
 on:
   push:
-    branches-ignore:
-      - [main, fossil_base_case]
+    # branches-ignore:
+    #   - [main, fossil_base_case]
   workflow_dispatch:
-    inputs:
-      git-ref:
-        description: Git Hash (Optional)
-        required: false
+    # inputs:
+    #   git-ref:
+    #     description: Git Hash (Optional)
+    #     required: false
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
