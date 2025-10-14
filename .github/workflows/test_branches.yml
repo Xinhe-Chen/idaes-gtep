@@ -3,7 +3,7 @@ name: GitHub Branch CI
 on:
   push:
     branches-ignore:
-      - main
+      - [main, fossil_base_case]
   workflow_dispatch:
     inputs:
       git-ref:
