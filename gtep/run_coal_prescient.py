@@ -2,13 +2,13 @@ from prescient.simulator import Prescient
 
 # set some options
 prescient_options = {
-    "data_path": "gtep/data/123_Bus_Coal/Prescient",
+    "data_path": "data/123_Bus_Coal/Prescient_1",
     "input_format": "rts-gmlc",
     "simulate_out_of_sample": False,
     "run_sced_with_persistent_forecast_errors": False,
-    "output_directory": "gtep/data/123_Bus_Coal/Prescient/results",
+    "output_directory": "data/123_Bus_Coal/Prescient_1/results",
     "start_date": "01-01-2035",
-    "num_days": 365,
+    "num_days": 3,
     "sced_horizon": 24,
     "ruc_mipgap": 0.01,
     "reserve_factor": 0,
