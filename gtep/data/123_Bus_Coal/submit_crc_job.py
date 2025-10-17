@@ -1,0 +1,35 @@
+import os
+import json
+
+this_file_path = os.path.dirname(os.path.realpath(__file__))
+
+def submit_job(job_name="ERCOT_base_PCM"):
+
+    # create a directory to save job scripts
+    job_scripts_dir = os.path.join(this_file_path, "job_scripts")
+    if not os.path.isdir(job_scripts_dir):
+        os.mkdir(job_scripts_dir)
+
+    file_name = os.path.join(job_scripts_dir, f"{job_name}"  + ".sh")
+    conda_env_path = "new_pcm"
+    with open(file_name, "w") as f:
+        f.write(
+            "#!/bin/bash\n"
+            + "#$ -M xchen24@nd.edu\n"
+            + "#$ -m ae\n"
+            + "#$ -q long\n"
+            + "#$ -N " + f"{job_name}" + "\n"
+            + f"conda activate {conda_env_path}\n"
+            # + "export LD_LIBRARY_PATH=~/.conda/envs/regen/lib:$LD_LIBRARY_PATH \n"
+            + "module load gurobi\n"
+            + "module load ipopt/3.14.2 \n"
+            + f"python ./run_coal_prescient.py"
+        )
+
+    os.system(f"qsub {file_name}")
+
+
+if __name__ == "__main__":
+    
+    job_name = "ERCOT_base_PCM_new_options"
+    submit_job(job_name)
