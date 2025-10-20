@@ -31,5 +31,5 @@ def submit_job(job_name="ERCOT_base_PCM"):
 
 if __name__ == "__main__":
     
-    job_name = "ERCOT_base_PCM_new_options"
+    job_name = "ERCOT_base_PCM_new_options_data_fi:x"
     submit_job(job_name)
